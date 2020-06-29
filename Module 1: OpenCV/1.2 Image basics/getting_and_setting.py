@@ -35,7 +35,7 @@ cv2.imshow("Bottom-Right Corner", bottomright)
 cv2.imshow("Bottom-Left Corner", bottomleft)
 
 # green top-left corner
-image[0:cY, 0:cX]= (0,255,0)
+image[0:cY, 0:cX] = (0,255,0)
 cv2.imshow("Updated", image)
 
 cv2.waitKey(0)
