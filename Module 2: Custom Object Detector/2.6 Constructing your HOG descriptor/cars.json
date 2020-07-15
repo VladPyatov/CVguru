@@ -2,9 +2,9 @@
   /****
   * DATASET PATHS
   ****/
-  "image_dataset": "/Users/vladpyatov/PycharmProjects/Gurus/datasets/caltech101/101_ObjectCategories/car_side",
-  "image_annotations": "/Users/vladpyatov/PycharmProjects/Gurus/datasets/caltech101/Annotations/car_side",
-  "image_distractions": "/Users/vladpyatov/PycharmProjects/Gurus/datasets/sceneclass13",
+  "image_dataset": "datasets/caltech101/101_ObjectCategories/car_side",
+  "image_annotations": "datasets/caltech101/Annotations/car_side",
+  "image_distractions": "datasets/sceneclass13",
 
   /****
   * FEATURE EXTRACTION
@@ -32,4 +32,5 @@
   "pyramid_scale": 1.5,
   "window_dim": [96,32],
   "min_probability": 0.7
+
 }

@@ -1,5 +1,5 @@
 from __future__ import print_function
-from .conf import Conf
+from conf import Conf
 from scipy import io
 import numpy as np
 import argparse
