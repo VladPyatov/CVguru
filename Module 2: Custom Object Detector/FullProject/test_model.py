@@ -1,6 +1,7 @@
-from project.object_detection import ObjectDetector
+from project.object_detection import ObjectDetector, non_max_suppression
 from project.descriptors import HOG
 from project.utils import Conf
+import numpy as np
 import imutils
 import argparse
 import pickle
@@ -24,18 +25,24 @@ od = ObjectDetector(model, hog)
 
 # load the image and convert it to grayscale
 image = cv2.imread(args["image"])
-#image = imutils.resize(image, width=min(260, image.shape[1]))
+image = imutils.resize(image, width=min(260, image.shape[1]))
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-boxes, probs = od.detect(gray, conf["window_dim"], winStep=conf["window_step"], pyramidScale=conf["pyramid_scale"],
-                         minProb=conf["min_probability"])
+# detect objects in the image and apply non-maxima suppression to the bounding boxes
+(boxes, probs) = od.detect(gray, conf["window_dim"], winStep=conf["window_step"],
+                           pyramidScale=conf["pyramid_scale"], minProb=conf["min_probability"])
+pick = non_max_suppression(np.array(boxes), probs, conf["overlap_thresh"])
+orig = image.copy()
 
-# loop over the bounding boxes and draw them
+# loop over the original bounding boxes and draw them
 for (startX, startY, endX, endY) in boxes:
-    cv2.rectangle(image, (startX, startY), (endX, endY), (0,0,255), 2)
+    cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 0, 255), 2)
 
-cv2.imshow("image", image)
+# loop over the allowed bounding boxes and draw them
+for (startX, startY, endX, endY) in pick:
+    cv2.rectangle(image, (startX, startY), (endX, endY), (0, 255, 0), 2)
+
+# show the output images
+cv2.imshow("Original", orig)
+cv2.imshow("Image", image)
 cv2.waitKey(0)
-
-
-

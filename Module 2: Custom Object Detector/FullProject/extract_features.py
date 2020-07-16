@@ -21,7 +21,7 @@ conf = Conf(args["conf"])
 
 # initialize the HOG descriptor along with the list of data and labels
 hog = HOG(orientations=conf["orientations"], pixelsPerCell=tuple(conf["pixels_per_cell"]),
-          cellsPerBlock=tuple(conf["cells_per_block"]), normalize=conf["normalize"])
+          cellsPerBlock=tuple(conf["cells_per_block"]), normalize=conf["normalize"], block_norm="L1")
 data = []
 labels = []
 
