@@ -1,5 +1,5 @@
 from __future__ import print_function
-from ObjectDetector.utils import Conf
+from project.utils import Conf
 from scipy import io
 import numpy as np
 import argparse

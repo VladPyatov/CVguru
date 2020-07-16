@@ -1,8 +1,8 @@
 from __future__ import print_function
 from sklearn.feature_extraction.image import extract_patches_2d
-from ObjectDetector.object_detection import helpers
-from ObjectDetector.descriptors import HOG
-from ObjectDetector.utils import dataset, Conf
+from project.object_detection import helpers
+from project.descriptors import HOG
+from project.utils import dataset, Conf
 from imutils import paths
 from scipy import io
 import numpy as np
