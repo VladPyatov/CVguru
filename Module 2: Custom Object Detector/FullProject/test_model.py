@@ -25,7 +25,7 @@ od = ObjectDetector(model, hog)
 
 # load the image and convert it to grayscale
 image = cv2.imread(args["image"])
-image = imutils.resize(image, width=min(260, image.shape[1]))
+#image = imutils.resize(image, width=min(260, image.shape[1]))
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # detect objects in the image and apply non-maxima suppression to the bounding boxes

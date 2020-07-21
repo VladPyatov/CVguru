@@ -34,5 +34,5 @@ model.fit(data, labels)
 print("[INFO] dumping classifier...")
 f = open(conf["classifier_path"], "wb")
 f.write(pickle.dumps(model))
-
+f.close()
 
