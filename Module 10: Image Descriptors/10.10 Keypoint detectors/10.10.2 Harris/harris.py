@@ -1,5 +1,6 @@
 from __future__ import print_function
 import numpy as np
+import argparse
 import cv2
 
 
@@ -18,8 +19,11 @@ def harris(gray, blockSize=2, apetureSize=3, k=0.1, T=0.02):
     # return the Harris keypoints
     return kps
 
-# load the image and convert it to grayscale
-image = cv2.imread("next.png")
+# load the game and convert it to gray-scale
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--image", required=True, help="Image path")
+args = vars(ap.parse_args())
+image = cv2.imread(args["image"])
 orig = image.copy()
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
