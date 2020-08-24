@@ -20,7 +20,10 @@
 /Module 10: Image Descriptors/10.6 Haralick texture/sand.jpg
 /delete.py
 /Module 3: Content-based Image Retrieval/3.5 Extracting keypoints and local invariant descriptors/output/features.hdf5
-/Module 3: Content-based Image Retrieval/3.7 Visualizing words in a codebook/features.hdf5
+/Module 3: Content-based Image Retrieval/3.7 Visualizing words in a codebook/output/features.hdf5
 /Module 3: Content-based Image Retrieval/3.5 Extracting keypoints and local invariant descriptors/output/features_quiz.hdf5
 /Module 3: Content-based Image Retrieval/Full project/output/
 /Module 3: Content-based Image Retrieval/3.8 Vector quantization/3.8.2 Forming a BOVW/output/
+/Module 3: Content-based Image Retrieval/3.9 Inverted indexes and searching/3.9.2 Building an inverted index/output/
+/Module 3: Content-based Image Retrieval/3.6 Clustering features to form a codebook/output/
+/Module 3: Content-based Image Retrieval/3.7 Visualizing words in a codebook/output/
